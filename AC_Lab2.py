@@ -64,7 +64,7 @@ def encoding(input_filename, freq, outputfilename):
     input_text=input_file.read()
     
     coding_result = []
-    count = CodingLength 
+    count = CodingLength
     for char in input_text:
         if count >= CodingLength:
             (low, high) = char_low_high(char, freq)
@@ -75,9 +75,7 @@ def encoding(input_filename, freq, outputfilename):
             
         if count >= CodingLength:
             coding_result.append((count, low+(high-low)/2))
-    if count != 0:
-        coding_result.append((count, low + (high - low) / 2))
-    pickle.dump(coding_result, output_file, protocol=1)
+    pickle.dump(coding_result, output_file)
     input_file.close()
     output_file.close()
 
